@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react';
 
 function App() {
+  const {
+    getData,
+    data,
+  } = useVisitorData({extendedResult: true}, { immediate: false });
+
+  const updateData = () => {
+      getData({ignoreCache: true})
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="App-identifyButton" onClick={updateData}>Identify</button>
+      <pre className="App-userData">{JSON.stringify(data, null, ' ')}</pre>
     </div>
   );
 }
