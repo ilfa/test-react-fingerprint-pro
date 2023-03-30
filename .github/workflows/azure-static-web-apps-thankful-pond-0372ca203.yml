@@ -37,6 +37,7 @@ jobs:
           REACT_APP_FP_BEHAVIOR_PATH: ${{ secrets.REACT_APP_FP_BEHAVIOR_PATH }}
           REACT_APP_FP_DOWNLOAD_PATH: ${{ secrets.REACT_APP_FP_DOWNLOAD_PATH }}
           REACT_APP_FP_RESULT_PATH: ${{ secrets.REACT_APP_FP_RESULT_PATH }}
+          REACT_APP_FP_USE_CLOUDFRONT: 1
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
