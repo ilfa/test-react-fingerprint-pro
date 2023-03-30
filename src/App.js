@@ -12,8 +12,8 @@ console.log(useCloudfront, !!useCloudfront)
 
 const loadOptions = useCloudfront ? {
     apiKey: publicApiKey,
-    scriptUrlPattern: `/${behaviorPath}/${downloadPath}?apiKey=<apiKey>&version=<version>&loaderVersion=<loaderVersion>`,
-    endpoint: `/${behaviorPath}/${resultPath}`,
+    scriptUrlPattern: `${behaviorPath}/${downloadPath}?apiKey=<apiKey>&version=<version>&loaderVersion=<loaderVersion>`,
+    endpoint: `${behaviorPath}/${resultPath}`,
 } : {
     apiKey: publicApiKey,
 };
